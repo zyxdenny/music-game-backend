@@ -8,7 +8,7 @@ with open("config.json") as config_file:
     config = json.load(config_file)
     
 app.config['SECRET_KEY'] = config['app_secret_key']
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{config['db_username']}:{config['db_password']}@{config['host']}:{config['port']}/{config['db_name']}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{config['db_username']}:{config['db_password']}@{config['host']}:{config['port']}/{config['db_name']}"
 db = SQLAlchemy(app)
 
 class User(db.Model):
